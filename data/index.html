@@ -1,0 +1,45 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Drone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styleDrone.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="icon" href="drone.ico">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/107/three.min.js"></script>
+</head>
+<body>
+  <div class="topnav">
+    <img class="drone_icon" src="drone_solido.png" alt="">
+    <h1 id="title">Drone</h1>
+    <img class="drone_icon" src="drone_solido.png" alt="">
+  </div>
+  <div class="content">
+    <div class="cards">
+      <div class="card">
+        <p class="card-title">VARIABLES</p>
+        <p><span class="reading">Height: <span id="height"></span> m</span></p>
+        <p><span class="reading">Yaw: <span id="yaw"></span> rad</span></p>
+        <p><span class="reading">Pitch: <span id="pitch"></span> rad</span></p>
+        <p><span class="reading">Roll: <span id="roll"></span> rad</span></p>
+        <p><span class="reading">Battery: <span id="batt"></span> V</span></p>
+        <p><span class="reading">Throttle: <span id="throttle_redings"></span></span></p>
+      </div>
+      <div class="card">
+        <p class="card-title">CONTROL</p>
+        <button id="start" class="control_button" onclick="get_request(this)">START</button><br><br>
+        <button id="end" class="control_button" onclick="get_request(this)">END</button>
+        <div>
+          <input type="number" value="1000" name="throttle" id="throttle" class="" oninput="get_request(this)" min="1000" max="2000" step="20">
+        </div>
+      </div>
+    </div>
+    <div class="cube-content">
+      <div id="3Dcube"></div>
+    </div>
+  </div>
+<script src="scriptDrone.js"></script>
+</body>
+</html>
