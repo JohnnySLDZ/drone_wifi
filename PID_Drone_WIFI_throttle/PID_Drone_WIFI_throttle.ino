@@ -1,18 +1,11 @@
 #include <ESC.h>
-#include <ESP32Servo.h>
-
-#include <esp_now.h>
 #include <WiFi.h>
-
 #include <Adafruit_BMP280.h>
 #include <SimpleKalmanFilter.h>
-
 #include <WiFi.h>
 #include <AsyncTCP.h>
 #include <ESPAsyncWebServer.h>
-
 #include <Arduino_JSON.h>
-
 #include "SPIFFS.h"
 
 bool start_Drone = false;
@@ -21,8 +14,8 @@ bool initiation = true;
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Replace with your network credentials
-const char* ssid = "X13";
-const char* password = "Xemnas13";
+const char* ssid = "";
+const char* password = "";
 
 // Create AsyncWebServer object on port 80
 AsyncWebServer server(80);
@@ -192,23 +185,6 @@ void loop() {
   PID();
   battery_status();
   update_web_server();
-  // Serial.print(current_height);
-  // Serial.print(" ");
-  // Serial.print(currentAngle_yaw);
-  // Serial.print(" ");
-  // Serial.print(currentAngle_pitch);
-  // Serial.print(" ");
-  // Serial.print(currentAngle_roll);
-  // Serial.print(" ");
-  // Serial.print(u_h);
-  // Serial.print(" ");
-  // Serial.print(u_yaw);
-  // Serial.print(" ");
-  // Serial.print(u_pitch);
-  // Serial.print(" ");
-  // Serial.print(u_roll);
-  // Serial.print(" ");
-  // Serial.println(battery_level);
   delay(20);
 }
 
